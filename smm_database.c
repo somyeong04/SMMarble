@@ -222,3 +222,30 @@ void* smmdb_getData(int list_nr, int index)
     
     return obj;
 }
+
+void free_M(int board_nr, int food_nr, int festival_nr)
+{
+	node_t* ndPtr;
+	int i;
+	for(i=0;i<board_nr;i++)
+    {
+    	void* freePtr=smmdb_getData(LISTNO_NODE,i);
+    	free(freePtr);
+    	ndPtr = smmList(LISTNO_NODE, i);
+    	free(ndPtr);
+	}
+	for(i=0;i<food_nr;i++)
+    {
+    	void* freePtr=smmdb_getData(LISTNO_FOODCARD,i);
+    	free(freePtr);
+    	ndPtr = smmList(LISTNO_FOODCARD, i);
+    	free(ndPtr);
+	}
+	for(i=0;i<festival_nr;i++)
+    {
+    	void* freePtr=smmdb_getData(LISTNO_FESTCARD,i);
+    	free(freePtr);
+    	ndPtr = smmList(LISTNO_FESTCARD, i);
+    	free(ndPtr);
+	}
+}
