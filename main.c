@@ -253,7 +253,7 @@ int actionNode(int player)
                         cur_player[player].energy -= smmObj_getNodeEnergy(boardPtr);
                         gradePtr = smmObj_genObject(smmObj_getNodeName(boardPtr), smmObjType_grade, 0, smmObj_getNodeCredit(boardPtr), 0, (rand() % 8));
                         smmdb_addTail(LISTNO_OFFSET_GRADE + player, gradePtr);
-                        printf("%s successfully takes the lecture %s with grade %s (average : %f, remained energy : %d)\n"
+                        printf("%s successfully takes the lecture %s with grade %s (average: %f, remained energy: %d)\n"
                             , cur_player[player].name
                             , smmObj_getNodeName(gradePtr)
                             , smmObj_getNodeGradeType(gradePtr)
@@ -269,7 +269,7 @@ int actionNode(int player)
                 }
                 else // 에너지가 부족한 경우 
                 {
-                    printf("%s is too hungry to take the lecture %s (remained:%d, required:%d)\n"
+                    printf("%s is too hungry to take the lecture %s (remained: %d, required: %d)\n"
                         , cur_player[player].name
                         , smmObj_getNodeName(boardPtr)
                         , cur_player[player].energy
@@ -286,7 +286,7 @@ int actionNode(int player)
 		//case Restaurant
         case SMMNODE_TYPE_RESTAURANT:
             cur_player[player].energy += smmObj_getNodeEnergy(boardPtr);
-            printf("Let's eat in %s and charge %d energies (remained energy : %d)\n"
+            printf("Let's eat in %s and charge %d energies (remained energy: %d)\n"
                 , smmObj_getNodeName(boardPtr)
                 , smmObj_getNodeEnergy(boardPtr)
                 , cur_player[player].energy);
@@ -416,15 +416,14 @@ void goForward(int player, int step) // 플레이어를 주어진 스텝만큼 전진시키는 함
         for (i = 0; i < step; i++) // 플레이어가 해당 턴에 지나온 노드 차례대로 출력 
 		{
             Sleep(300);
-            int pos = (cur_player[player].position - step + i + smmdb_len(LISTNO_NODE)) % smmdb_len(LISTNO_NODE);
+            int pos = (cur_player[player].position - step + i + smmdb_len(LISTNO_NODE)) % smmdb_len(LISTNO_NODE) + 1;
             printf(" => Jump to %s\n", smmObj_getNodeName(smmdb_getData(LISTNO_NODE, pos)));
         }
         
         // 플레이어가 해당 턴에 최종적으로 도착한 노드 출력 
         Sleep(300);
-		printf(" -> %s go to node %i (name: %s)\n\n", 
-	    cur_player[player].name, cur_player[player].position,
-	    smmObj_getNodeName(boardPtr));
+		printf(" -> %s go to %s (no. %i)\n\n", 
+	    cur_player[player].name, smmObj_getNodeName(boardPtr), cur_player[player].position);
 	}
 }
 

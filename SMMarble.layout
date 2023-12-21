@@ -6,15 +6,15 @@ LeftChar=1
 [Editors]
 <<<<<<< HEAD
 Order=0,1,2,3,5
-Focused=5
+Focused=0
 =======
 Order=5,1,2,4,3,0
 Focused=0
 >>>>>>> parent of 730f75b (12/21_2)
 [Editor_0]
-CursorCol=13
-CursorRow=375
-TopLine=28
+CursorCol=64
+CursorRow=259
+TopLine=235
 LeftChar=1
 [Editor_1]
 CursorCol=27
@@ -39,5 +39,5 @@ LeftChar=1
 [Editor_5]
 CursorCol=20
 CursorRow=22
-TopLine=19
+TopLine=1
 LeftChar=1
