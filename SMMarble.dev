@@ -91,7 +91,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit5]
-FileName=smm_object.c
+FileName=smm_object.h
 CompileCpp=0
 Folder=
 Compile=1
@@ -101,7 +101,7 @@ OverrideBuildCmd=0
 BuildCmd=
 
 [Unit6]
-FileName=smm_object.h
+FileName=..\..\..\바탕 화면\수정본\새 폴더\smm_object.c
 CompileCpp=0
 Folder=
 Compile=1

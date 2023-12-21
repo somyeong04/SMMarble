@@ -26,7 +26,7 @@ static char smmNodeName[SMMNODE_TYPE_MAX][MAX_CHARNAME] = {
 
 char* smmObj_getTypeName(int type)
 {
-      return (char*)smmNodeName[type];
+    return (char*)smmNodeName[type];
 }
 
 
@@ -44,7 +44,7 @@ const char* gradeType[] = {
 
 //1. 구조체 형식 정의
 typedef struct smmObject {
-    char name[MAX_CHARNAME];
+	char name[MAX_CHARNAME];
     smmObjType_e objType; 
     int type;
     int credit;
