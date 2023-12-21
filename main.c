@@ -215,7 +215,7 @@ int actionNode(int player)
         case SMMNODE_TYPE_LECTURE: 
             while (1)
             {
-                printf("Lecture %s (credit: %d, energy: %d) starts! are you going to join? or drop? :"
+                printf("Lecture %s (credit: %d, energy: %d) starts! are you going to join? or drop?: "
                     , smmObj_getNodeName(boardPtr)
                     , smmObj_getNodeCredit(boardPtr)
                     , smmObj_getNodeEnergy(boardPtr));
@@ -351,7 +351,7 @@ int actionNode(int player)
             p_di = rand() % smmdb_len(LISTNO_FOODCARD);
             void* foodPtr = smmdb_getData(LISTNO_FOODCARD, p_di);
             cur_player[player].energy += smmObj_getNodeEnergy(foodPtr);
-            printf("%s picks %s and charges %d (remained energy : %d)\n"
+            printf("%s picks %s and charges %d (remained energy: %d)\n"
                 , cur_player[player].name
                 , smmObj_getNodeName(foodPtr), smmObj_getNodeEnergy(foodPtr), cur_player[player].energy);
             break;
@@ -395,8 +395,7 @@ void goForward(int player, int step) // 플레이어를 주어진 스텝만큼 전진시키는 함
         if (cur_player[player].flag_graduate == 1) // 졸업 조건 만족 O & 홈 노드 O
         {
             end = 1;
-            printf("\nCONGRATULATIONS!! %s has achieved the target credit and arrived at home!!\n\n\n",cur_player[player].name);
-            printf("\n---------------------------------------------------------------------------------------\n");
+            printf("CONGRATULATIONS!! %s has achieved the target credit and arrived at home!! \n\n\n",cur_player[player].name);
             end_print(player);
             cur_player[player].position = 0;
         }
